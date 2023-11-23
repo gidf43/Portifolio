@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!--Google fonts End-->
+    <!--Bootstrap icon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!--End Bootstrapicon-->
+
+    <link rel="stylesheet" href="style.css">
+    <title>GF</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="interface">
+            <div class="log">
+                <a href="index.html">
+                   <!--logo <img src="image/Log.jpg" alt="logo">-->
+                    <h3><a href="index.html">GF</a></h3>
+                </a>
+            </div><!--logo-->
+
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="index.html">Inicio</a> </li>
+                    <li><a href="index.html#especialidades">Especialidades</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="projetos.html#">projetos</a></li>
+                </ul>
+            </nav>
+
+            <div class="btn-contacto">
+                <a href="conatct.html">
+                    <button>Contacto</button>
+                </a>
+            </div>
+        </div><!--interface-->
+
+    </header>
+    <main>
+        <section class="topo-do-site" >
+            <div class="interface">
+                <div class="flex">
+                    <div class="txt-topo-site">
+                        <h1>Projetos<span>.</span></h1>
+                        <p>
+                            Cada click é uma oportunidade para mudar a 
+                            forma como vemos e nos relacionamos com 
+                            as coisas digitais ao nosso redor.
+                            O mundo está cada vez mais evoluido e essa evolução nos faz se 
+                            conectar com tudo a nossa volta, Seu click seu poder para se Conectar.
+                        </p>
+                        <div class="btn-contacto">
+                            <a href="index.html#formulario">
+                                <button>Entre em Contacto</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-topo-site">
+                        <img src="image/projeto.svg" alt="pessoa"
+                            style="width:400px; height: 400px; border-radius: 30px;">
+                    </div>
+                </div><!---Flex-->
+            </div><!-- interface--->
+        </section><!--Topo-do-site-->
+
+
+        <section class="galeria">
+            <div class="interface">
+                <h2 class="titulo">Projetos<span>.</span></h2>
+                <br>
+                <div class="galeria-grid">
+                    <div class="projeto" onclick="abrirModal('projeto1', '2022', 'Plataforma de desenvolvimento Integrado')">
+                        <img src="image/projeto1.png" alt="Projeto 1">
+                        <h3 style="color:#000">PD.io</h3>
+                    </div>
+                    <div class="projeto" onclick="abrirModal('projeto2', '2023', 'Open Banck')">
+                        <img src="image/projeto2.png" alt="Projeto 2">
+                        <h3 style="color:#000">Open Bank</h3>
+                    </div>
+                    <div class="projeto" onclick="abrirModal('projeto3', '2023', 'R.Academy')">
+                        <img src="image/projeto3.png" alt="Projeto 2">
+                        <h3 style="color:#000">Remote Academy</h3>
+                    </div>
+                    <!-- Adicione mais projetos conforme necessário -->
+                </div>
+            </div>
+        </section>
+        
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" onclick="fecharModal()">&times;</span>
+                <img id="modalImg" alt="Projeto">
+                <h2 id="modalNome"></h2>
+                <p id="modalAnoCategoria"></p>
+            </div>
+        </div>
+        
+
+    </main>
+
+
+    <footer>
+        <div class="interface">
+            <div class="line-footer">
+                <div class="flex">
+                    <div class="logo-footer">
+                        <h3><a href="index.html" style="text-decoration: none; color: #b4abab;">GF</a></h3>
+                    </div>
+                    <div class="btn-social">
+                        <a href="#"><button><i class="bi bi-instagram"></i></button></a>
+                        <a href="https://www.facebook.com/gideao.bauwer/"><button><i class="bi bi-facebook"></i></button></a>
+                        <a href="https://web.whatsapp.com/~GideãoF🥷🏾" target="_blank"><button><i class="bi bi-whatsapp"></i></button></a>
+                        <a href="#"><button><i class="bi bi-linkedin"></i></button></a>
+                    </div>
+                </div><!--Flex-->
+            </div><!--line-footer-->
+
+            <div class="line-footer borda">
+                <p><i class="bi bi-envelope-fill"></i> <a href="mailto:gideaof43@gmail.com" target="_blank">
+                        gideaof43@gmail.com</a></p>
+            </div><!--line-footer-->
+        </div><!--interface-->
+    </footer>
+
+
+    <script>
+        function abrirModal(nome, ano, categoria) {
+            var modal = document.getElementById('myModal');
+            var modalImg = document.getElementById('modalImg');
+            var modalNome = document.getElementById('modalNome');
+            var modalAnoCategoria = document.getElementById('modalAnoCategoria');
+    
+            modal.style.display = 'flex';
+            modalImg.src = 'image/' + nome.toLowerCase().replace(/\s/g, '') + '.png';
+            modalNome.innerHTML = nome;
+            modalAnoCategoria.innerHTML = ano + ' | ' + categoria;
+        }
+    
+        function fecharModal() {
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'none';
+        }
+    </script>
+    
+</body>
+
+</html>
